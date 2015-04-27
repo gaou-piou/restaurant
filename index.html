@@ -5,49 +5,91 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Restaurant Application</title>
+		<link rel="stylesheet" type="text/css" href="css/icons.css" />
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="author" href="CODEARMADA Limited">
+		<script src="js/elaea_pepe.json"></script>
 	</head>
 
-	<body class="home">
+	<body class="home" app_language="gr">
+<!-- 
+		<div id="edit_global_area" class="full_absolute">
+			<div class="wrapper"><h1 class="title">edit in</h1><div class="editor"><div class="actions"><i class="fa fa-check"></i><i class="fa fa-times"></i></div></div></div>
+		</div>
+ -->
+		<div id="page" class="mp-pusher">
+			<nav id="mp-menu" class="mp-menu elaia">
+				<div class="mp-level">
+					<h2 class="fa fa-cutlery"><i style="font-size:2em;" class="fa fa-cutlery"></i></h2>
+					<div class="menu_cat_enable_edit"><i class="fa fa-wrench" onclick="javascript:menu_cat_edit(this);new move(this, 0)"></i><i class="fa fa-plus"></i><i class="fa fa-floppy-o" onclick="javascript: save_element(this);"></i></div>
+					<ul class="first_ul">
 
-		<header>
+					</ul>
 
-		</header>
+				</div>
+			</nav>
+			<nav id="mp-menu2" class="mp-menu pepe">
+				<div class="mp-level">
+					<h2 class="fa fa-cutlery"><i style="font-size:2em;" class="fa fa-cutlery"></i></h2>
+					<div class="menu_cat_enable_edit"><i class="fa fa-wrench" onclick="javascript:menu_cat_edit(this);new move(this, 0)"></i><i class="fa fa-plus"></i><i class="fa fa-floppy-o" onclick="javascript: save_element(this);"></i></div>
+					<ul class="first_ul">
 
-		<div id="page">
+					</ul>
+
+				</div>
+			</nav>
 
 			<div id="page_wrapper">
-				<div class="start_brand_area elaia" style="background-image:url(images/elaia_bg.svg)">
+				<header id="home_header">
+					<div class="head_lines line_1">
+						<div class="language">
+							<span class="en" onclick="javascript: new translation('en');"><!-- English --></span>
+							<span class="gr active" onclick="javascript: new translation('gr');"><!-- Ελληνικά --></span>
+							<span class="de" onclick="javascript: new translation('de');"><!-- Deutsch --></span>
+							<span class="fr" onclick="javascript: new translation('fr');"><!-- Français --></span>
+							<span class="it" onclick="javascript: new translation('it');"><!-- Italiano --></span>
+							<span class="sp" onclick="javascript: new translation('sp');"><!-- Español --></span>
+							<span class="ru" onclick="javascript: new translation('ru');"><!-- Pусский --></span>
+							<span class="ch" onclick="javascript: new translation('ch');"><!-- 中国 --></span>
+						</div>
+					</div>
+					<div class="head_lines line_2"></div>
+				</header>
+				<div class="start_brand_area elaia">
 					<div class="layer full_absolute"></div>
-					<img src="images/elaia.svg">
+					<div class="brand_content editable left_editable" edit-type="home">
+					</div>
+					<div class="brand_title">
+						<span class="custom_trans" lang-en="restaurant" lang-gr="εστιατόριο" lang-de="restaurant" lang-fr="restaurant" lang-it="ristorante" lang-sp="restaurante" lang-ru="ресторан" lang-ch="餐厅">εστιατόριο</span>
+						<h1>ΕΛΑΙΑ</h1>
+					</div>
 				</div>
-				<div class="start_brand_area pepe" style="background-image:url(http://mezessf.com/wp-content/uploads/2012/02/Chicken-Souvlaki1.jpg)">
+				<div class="start_brand_area pepe">
 					<div class="layer full_absolute"></div>
-					<img src="images/pepe_logo.svg">
+					<div class="brand_content editable" edit-type="home">
+					</div>
+					<div class="brand_title">
+						<span class="custom_trans" lang-en="grill" lang-gr="ψητοπωλείο" lang-de="grill" lang-fr="gril" lang-it="griglia" lang-sp="parrilla" lang-ru="гриль" lang-ch="烤架">ψητοπωλείο</span>
+						<h1>ΠΕΠΕ</h1>
+					</div>
 				</div>
 			</div>
 
 		</div>
 
-		<footer>
-
-		</footer>
-
-
-
-
-
-
-
-
-
-
 		<script src="js/TweenMax.min.js"></script>
 		<script src="js/classie.js"></script>
-		<script src="js/reqwest.js"></script>
+
+		<script src="js/mlpushmenu.js"></script>
+
+		<script src="js/general_functions.js"></script>
+
+		<script src="js/struction.js"></script>
+
+		<script src="js/translation.js"></script>
 
 		<script src="js/main.js"></script>
 		<script src="js/home.js"></script>
+
 	</body>
 </html>

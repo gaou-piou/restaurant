@@ -5,6 +5,8 @@
  * body `font-size` is set using `em` units.
  */
 @import url(../fonts/HelveticaNeue/HelveticaNeue-Regular.css);
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic&subset=latin,greek);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,greek);
 /* line 106, ../../../../../../root/.gem/ruby/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
   font-size: 100%;
@@ -631,53 +633,73 @@ th {
   box-sizing: border-box;
 }
 
-/* line 27, ../../../media/work/restaurant_application/sass/sass/_style_general.scss */
-body {
-  font-family: "HelveticaNeue-Regular", sans-serif;
-  font-size: 18px;
-  font-weight: 300;
+/* line 26, ../../../media/work/restaurant_application/sass/sass/_style_general.scss */
+body,
+html {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }
 
-/* line 33, ../../../media/work/restaurant_application/sass/sass/_style_general.scss */
+/* line 36, ../../../media/work/restaurant_application/sass/sass/_style_general.scss */
+body {
+  font-family: 'Roboto', 'Noto Sans', "HelveticaNeue-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  background-image: url("../images/cat_bg.jpg");
+  color: #111;
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+  font-smooth: always;
+  font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* line 54, ../../../media/work/restaurant_application/sass/sass/_style_general.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
 
-/* line 39, ../../../media/work/restaurant_application/sass/sass/_style_general.scss */
+/* line 60, ../../../media/work/restaurant_application/sass/sass/_style_general.scss */
 header,
 footer {
   position: absolute;
   width: 100%;
-  height: 60px;
+  height: 80px;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #f2f2f2;
   z-index: 9;
 }
 
-/* line 49, ../../../media/work/restaurant_application/sass/sass/_style_general.scss */
+/* line 70, ../../../media/work/restaurant_application/sass/sass/_style_general.scss */
 footer {
   top: inherit;
   bottom: 0;
 }
 
-/* line 54, ../../../media/work/restaurant_application/sass/sass/_style_general.scss */
+/* line 75, ../../../media/work/restaurant_application/sass/sass/_style_general.scss */
 #page {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  -ms-overflow-y: auto;
-  overflow-y: auto;
-  background-color: #000;
 }
 
-/* line 65, ../../../media/work/restaurant_application/sass/sass/_style_general.scss */
+/* line 83, ../../../media/work/restaurant_application/sass/sass/_style_general.scss */
 #page_wrapper {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  background-position: center top 100px;
+  background-repeat: no-repeat;
+  background-size: auto 50%;
 }
 /* line 12, ../../../../../../root/.gem/ruby/2.2.0/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
 #page_wrapper:after {
@@ -715,37 +737,677 @@ body.home .start_brand_area {
   -o-background-size: cover;
   -webkit-background-size: cover;
   background-size: cover;
-  background-position: center;
+  background-position: top;
 }
-/* line 29, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+@media (orientation: portrait) {
+  /* line 17, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+  body.home .start_brand_area {
+    width: 100%;
+    height: -webkit-calc(50% - 40px);
+    height: calc(50% - 40px);
+  }
+}
+/* line 34, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+body.home .start_brand_area.elaia {
+  background-image: url("../images/elaia.jpg");
+}
+/* line 37, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+body.home .start_brand_area.elaia .brand_content {
+  right: 50px;
+  top: 150px;
+}
+/* line 42, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+body.home .start_brand_area.elaia .brand_title {
+  bottom: 50px;
+  right: 50px;
+  text-align: right;
+}
+/* line 47, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+body.home .start_brand_area.elaia .brand_title span {
+  background-color: #9AB106;
+}
+@media (orientation: portrait) {
+  /* line 34, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+  body.home .start_brand_area.elaia {
+    top: 80px;
+    background-position: bottom;
+  }
+  /* line 56, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+  body.home .start_brand_area.elaia .brand_content {
+    left: 50px;
+    bottom: 50px;
+    right: initial;
+    top: initial;
+  }
+}
+/* line 65, ../../../media/work/restaurant_application/sass/sass/_home.scss */
 body.home .start_brand_area.pepe {
   left: inherit;
   right: 0;
+  background-image: url("../images/pepe.jpg");
+  background-position: left center;
 }
-/* line 34, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+/* line 71, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+body.home .start_brand_area.pepe .brand_content {
+  left: 50px;
+  bottom: 50px;
+}
+/* line 76, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+body.home .start_brand_area.pepe .brand_title {
+  top: 150px;
+  left: 50px;
+  text-align: left;
+}
+/* line 81, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+body.home .start_brand_area.pepe .brand_title span {
+  background-color: #E4151B;
+}
+/* line 85, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+body.home .start_brand_area.pepe .brand_title h1 {
+  color: #F2F2F2;
+  text-shadow: none;
+}
+@media (orientation: portrait) {
+  /* line 65, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+  body.home .start_brand_area.pepe {
+    top: -webkit-calc(50% + 40px);
+    top: calc(50% + 40px);
+  }
+  /* line 94, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+  body.home .start_brand_area.pepe .brand_title {
+    top: 50px;
+    bottom: initial;
+  }
+  /* line 99, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+  body.home .start_brand_area.pepe .brand_content {
+    right: 50px;
+    top: 50px;
+    bottom: initial;
+    left: initial;
+  }
+}
+/* line 108, ../../../media/work/restaurant_application/sass/sass/_home.scss */
 body.home .start_brand_area .layer {
-  background: rgba(0, 0, 0, 0.4);
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.4) 0%, #000000 100%);
-  filter: progid:dximagetransform.microsoft.gradient(startcolorstr='#000000', endcolorstr='#000000', gradienttype=1 );
+  background-image: url("../images/pattern.png");
   z-index: 1;
+  cursor: pointer;
 }
-/* line 41, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+/* line 117, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+body.home .start_brand_area .brand_content {
+  position: absolute;
+  width: 50%;
+  font-size: 0.75rem;
+  padding: 25px;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 2;
+  line-height: 1.2;
+}
+@media (orientation: portrait) {
+  /* line 117, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+  body.home .start_brand_area .brand_content {
+    width: 60%;
+  }
+}
+/* line 131, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+body.home .start_brand_area .brand_title {
+  position: absolute;
+  z-index: 2;
+}
+/* line 135, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+body.home .start_brand_area .brand_title span {
+  padding: 10px 20px;
+  color: #f2f2f2;
+  font-size: 1rem;
+  font-style: italic;
+}
+/* line 142, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+body.home .start_brand_area .brand_title h1 {
+  margin: 0;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
+}
+/* line 148, ../../../media/work/restaurant_application/sass/sass/_home.scss */
 body.home .start_brand_area img {
   position: absolute;
   width: 60%;
   min-width: 60%;
   left: 20%;
   height: auto;
-  top: 100px;
+  bottom: 100px;
   z-index: 2;
 }
 @media (orientation: portrait) {
-  /* line 41, ../../../media/work/restaurant_application/sass/sass/_home.scss */
+  /* line 148, ../../../media/work/restaurant_application/sass/sass/_home.scss */
   body.home .start_brand_area img {
     width: 90%;
     left: 5%;
-    top: 25%;
   }
+}
+
+/*
+##     ##  ########   ##    ##   ##     ##
+###   ###  ##         ###   ##   ##     ##
+#### ####  ##         ####  ##   ##     ##
+## ### ##  ######     ## ## ##   ##     ##
+##     ##  ##         ##  ####   ##     ##
+##     ##  ##         ##   ###   ##     ##
+##     ##  ########   ##    ##    #######
+ */
+/* line 20, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-pusher::after, .mp-level::after, .mp-level::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+/* line 32, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-pusher.mp-pushed::after, .mp-level.mp-level-overlay::after {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -moz-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+/* line 41, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-menu .mp-level.mp-level-overlay > .mp-back, .mp-menu .mp-level.mp-level-overlay > .mp-back::after {
+  background: transparent;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: transparent;
+}
+
+/* line 49, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.container {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #34495e;
+}
+
+/* line 55, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.scroller {
+  height: 100%;
+  overflow-y: scroll;
+  position: relative;
+}
+
+/* line 60, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.scroller-inner {
+  position: relative;
+}
+
+/* line 63, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.menu-trigger {
+  position: relative;
+  padding-left: 60px;
+  font-size: 0.9em;
+}
+/* line 67, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.menu-trigger:before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 40px;
+  height: 6px;
+  background: #fff;
+  -moz-box-shadow: 0 6px #34495e, 0 12px #fff, 0 18px #34495e, 0 24px #fff;
+  -webkit-box-shadow: 0 6px #34495e, 0 12px #fff, 0 18px #34495e, 0 24px #fff;
+  box-shadow: 0 6px #34495e, 0 12px #fff, 0 18px #34495e, 0 24px #fff;
+}
+
+/* line 78, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-pusher {
+  position: relative;
+  left: 0;
+  height: 100%;
+  -moz-perspective: 1000px;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  -moz-transition: -moz-transform 0.5s;
+  -o-transition: -o-transform 0.5s;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+/* line 89, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-pusher.elaia .mp-menu.elaia {
+  z-index: 1;
+  opacity: 1;
+}
+/* line 95, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-pusher.pepe .mp-menu.pepe {
+  z-index: 1;
+  opacity: 1;
+}
+
+/* line 101, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+  width: 300px;
+  height: 100%;
+  -moz-transform: translate3d(-100%, 0, 0);
+  -ms-transform: translate3d(-100%, 0, 0);
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+  -moz-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+/* line 112, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-menu > .mp-level {
+  border-right: solid 2px #fff;
+}
+/* line 115, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-menu > .mp-level ul {
+  -ms-overflow-y: auto;
+  overflow-y: auto;
+  -ms-overflow-x: hidden;
+  overflow-x: hidden;
+}
+/* line 123, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-menu.mp-overlap h2::before {
+  position: absolute;
+  top: 22px;
+  right: 3px;
+  margin-right: 8px;
+  font-size: 100%;
+  line-height: 2;
+  opacity: 0;
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -moz-transition: opacity 0.3s, -moz-transform 0.1s 0.3s;
+  -o-transition: opacity 0.3s, -o-transform 0.1s 0.3s;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.1s;
+  -webkit-transition-delay: 0s, 0.3s;
+  transition: opacity 0.3s, transform 0.1s 0.3s;
+}
+/* line 134, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-menu.mp-overlap > .mp-level {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+/* line 137, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-menu.mp-overlap > .mp-level.mp-level-open {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+/* line 144, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: -webkit-calc(100% - 78px);
+  height: calc(100% - 78px);
+}
+/* line 150, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-menu ul .cat_bg {
+  background-image: url("../images/cat_bg.png");
+  -moz-background-size: auto 100%;
+  -o-background-size: auto 100%;
+  -webkit-background-size: auto 100%;
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 157, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-menu ul li {
+  height: 200px;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 80px;
+  text-align: center;
+}
+/* line 164, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-menu ul li > img {
+  display: block;
+  margin: 0px auto;
+  width: 160px;
+  height: 180px;
+  padding-top: 20px;
+}
+/* line 172, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-menu ul li > a {
+  position: relative;
+  outline: none;
+  color: rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
+  font-size: 0.875rem;
+  -moz-transition: background 0.3s, box-shadow 0.3s;
+  -o-transition: background 0.3s, box-shadow 0.3s;
+  -webkit-transition: background 0.3s, box-shadow 0.3s;
+  transition: background 0.3s, box-shadow 0.3s;
+  vertical-align: middle;
+  font-style: italic;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 20px;
+  height: 2em;
+}
+/* line 190, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-menu ul li > a:after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+/* line 202, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-menu ul li::before {
+  float: left;
+  left: 10px;
+  z-index: -1;
+  color: rgba(0, 0, 0, 0.2);
+  line-height: 3.5;
+  margin-top: 68px;
+  margin-left: -18px;
+  -moz-transform: translate3d(150%, 0, 0);
+  -ms-transform: translate3d(150%, 0, 0);
+  -webkit-transform: translate3d(150%, 0, 0);
+  transform: translate3d(150%, 0, 0);
+}
+/* line 214, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-menu h2 {
+  margin: 0;
+  padding: 1em;
+  color: rgba(0, 0, 0, 0.4);
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  font-weight: 300;
+  font-size: 1em;
+  display: block;
+  line-height: 2;
+}
+/* line 224, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-menu > .mp-level {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+/* line 227, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-menu > .mp-level.mp-level-open {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+/* line 232, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-menu.mp-cover h2 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 1em;
+}
+/* line 245, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-menu .mp-level.mp-level-overlay > ul > li > a {
+  -moz-box-shadow: inset 0 -1px transparent;
+  -webkit-box-shadow: inset 0 -1px transparent;
+  box-shadow: inset 0 -1px transparent;
+}
+
+/* line 250, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-level {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/cat_bg.jpg");
+  -moz-transform: translate3d(-100%, 0, 0);
+  -ms-transform: translate3d(-100%, 0, 0);
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+  -moz-transition: -moz-transform 0.5s;
+  -o-transition: -o-transform 0.5s;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  z-index: 1;
+}
+/* line 266, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-level.mp-level-overlay {
+  cursor: pointer;
+}
+/* line 268, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-level.mp-level-overlay.mp-level::before {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  opacity: 1;
+}
+/* line 274, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-level.mp-level-overlay > ul > li:first-child > a {
+  -moz-box-shadow: inset 0 -1px transparent;
+  -webkit-box-shadow: inset 0 -1px transparent;
+  box-shadow: inset 0 -1px transparent;
+  -moz-box-shadow: inset 0 -1px transparent, inset 0 1px transparent;
+  -webkit-box-shadow: inset 0 -1px transparent, inset 0 1px transparent;
+  box-shadow: inset 0 -1px transparent, inset 0 1px transparent;
+}
+
+/* line 288, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-pusher::after {
+  background: rgba(0, 0, 0, 0.3);
+  -moz-transition: opacity 0.3s, width 0.1s 0.3s, height 0.1s 0.3s;
+  -o-transition: opacity 0.3s, width 0.1s 0.3s, height 0.1s 0.3s;
+  -webkit-transition: opacity 0.3s, width 0.1s, height 0.1s;
+  -webkit-transition-delay: 0s, 0.3s, 0.3s;
+  transition: opacity 0.3s, width 0.1s 0.3s, height 0.1s 0.3s;
+  z-index: 9;
+}
+
+/* line 294, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-level::after {
+  background: rgba(0, 0, 0, 0.3);
+  -moz-transition: opacity 0.3s, width 0.1s 0.3s, height 0.1s 0.3s;
+  -o-transition: opacity 0.3s, width 0.1s 0.3s, height 0.1s 0.3s;
+  -webkit-transition: opacity 0.3s, width 0.1s, height 0.1s;
+  -webkit-transition-delay: 0s, 0.3s, 0.3s;
+  transition: opacity 0.3s, width 0.1s 0.3s, height 0.1s 0.3s;
+  z-index: -1;
+}
+
+/* line 303, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-back {
+  position: relative;
+  display: block;
+  padding: 1em;
+  outline: none;
+  background: rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 1px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 0.8em;
+  -moz-transition: background 0.3s;
+  -o-transition: background 0.3s;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+
+/* line 317, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-back::after {
+  content: "\e037";
+  position: absolute;
+  right: 10px;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 1.3em;
+  font-family: linecons;
+}
+
+/* line 326, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.no-csstransforms3d .mp-pusher {
+  padding-left: 300px;
+}
+/* line 330, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.no-csstransforms3d .mp-menu .mp-level {
+  display: none;
+}
+/* line 333, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.no-csstransforms3d .mp-menu > .mp-level {
+  display: block;
+}
+
+/* line 339, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.no-js .mp-pusher {
+  padding-left: 300px;
+}
+/* line 343, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.no-js .mp-menu .mp-level {
+  display: none;
+}
+/* line 346, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.no-js .mp-menu > .mp-level {
+  display: block;
+}
+
+/* line 352, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-overlap .mp-level.mp-level-open {
+  -moz-box-shadow: 1px 0 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 1px 0 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 0 2px rgba(0, 0, 0, 0.2);
+  -moz-transform: translate3d(-40px, 0, 0);
+  -ms-transform: translate3d(-40px, 0, 0);
+  -webkit-transform: translate3d(-40px, 0, 0);
+  transform: translate3d(-40px, 0, 0);
+}
+/* line 356, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-overlap .mp-level.mp-level-overlay > h2::before {
+  opacity: 1;
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+  -o-transition: -o-transform 0.3s, opacity 0.3s;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* line 362, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-cover .mp-level.mp-level-open {
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+/* line 364, ../../../media/work/restaurant_application/sass/sass/_menu.scss */
+.mp-cover .mp-level.mp-level-open > ul > li > .mp-level:not(.mp-level-open) {
+  -moz-transform: translate3d(-100%, 0, 0);
+  -ms-transform: translate3d(-100%, 0, 0);
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+}
+
+/*
+##     ##  ########      ###     ########   ########   ########
+##     ##  ##           ## ##    ##     ##  ##         ##     ##
+##     ##  ##          ##   ##   ##     ##  ##         ##     ##
+#########  ######     ##     ##  ##     ##  ######     ########
+##     ##  ##         #########  ##     ##  ##         ##   ##
+##     ##  ##         ##     ##  ##     ##  ##         ##    ##
+##     ##  ########   ##     ##  ########   ########   ##     ##
+ */
+/* line 12, ../../../media/work/restaurant_application/sass/sass/_header.scss */
+header#home_header .head_lines {
+  position: relative;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+}
+/* line 19, ../../../media/work/restaurant_application/sass/sass/_header.scss */
+header#home_header .language {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 83.33333%;
+  float: left;
+  margin-left: 8.33333%;
+  text-align: center;
+  font-size: 0;
+}
+/* line 25, ../../../media/work/restaurant_application/sass/sass/_header.scss */
+header#home_header .language span {
+  font-size: 0.75rem;
+  display: inline-block;
+  cursor: pointer;
+  padding: 0 10px;
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  background-size: auto 80%;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+/* line 38, ../../../media/work/restaurant_application/sass/sass/_header.scss */
+header#home_header .language span.active {
+  font-weight: bold;
+}
+/* line 42, ../../../media/work/restaurant_application/sass/sass/_header.scss */
+header#home_header .language span.en {
+  background-image: url("../images/languages/en.png");
+}
+/* line 45, ../../../media/work/restaurant_application/sass/sass/_header.scss */
+header#home_header .language span.gr {
+  background-image: url("../images/languages/gr.png");
+}
+/* line 48, ../../../media/work/restaurant_application/sass/sass/_header.scss */
+header#home_header .language span.de {
+  background-image: url("../images/languages/de.png");
+}
+/* line 51, ../../../media/work/restaurant_application/sass/sass/_header.scss */
+header#home_header .language span.fr {
+  background-image: url("../images/languages/fr.png");
+}
+/* line 54, ../../../media/work/restaurant_application/sass/sass/_header.scss */
+header#home_header .language span.it {
+  background-image: url("../images/languages/it.png");
+}
+/* line 57, ../../../media/work/restaurant_application/sass/sass/_header.scss */
+header#home_header .language span.sp {
+  background-image: url("../images/languages/sp.png");
+}
+/* line 60, ../../../media/work/restaurant_application/sass/sass/_header.scss */
+header#home_header .language span.ru {
+  background-image: url("../images/languages/ru.png");
+}
+/* line 63, ../../../media/work/restaurant_application/sass/sass/_header.scss */
+header#home_header .language span.ch {
+  background-image: url("../images/languages/ch.png");
 }
 
 /*
@@ -764,6 +1426,535 @@ body.home .start_brand_area img {
   height: 100%;
   top: 0;
   left: 0;
+}
+
+/*
+########   ########   ####  ########
+##         ##     ##   ##      ##
+##         ##     ##   ##      ##
+######     ##     ##   ##      ##
+##         ##     ##   ##      ##
+##         ##     ##   ##      ##
+########   ########   ####     ##
+ */
+/* line 17, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.editable:hover .edit_node {
+  -moz-transform: translate3d(105%, -20%, 0);
+  -ms-transform: translate3d(105%, -20%, 0);
+  -webkit-transform: translate3d(105%, -20%, 0);
+  transform: translate3d(105%, -20%, 0);
+  opacity: 1;
+}
+/* line 24, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.editable.edit_checked .tg-list-item:last-child {
+  margin-top: 10px;
+}
+
+/* line 30, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node, #edit_global_area {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  z-index: 999;
+  border-left: solid 2px #49FF98;
+  background-color: #fff;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  padding: 20px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -moz-transition: -moz-transform 0.15s ease-out 0.5s, opacity 0.15s ease 0.5s;
+  -o-transition: -o-transform 0.15s ease-out 0.5s, opacity 0.15s ease 0.5s;
+  -webkit-transition: -webkit-transform 0.15s ease-out, opacity 0.15s ease;
+  -webkit-transition-delay: 0.5s, 0.5s;
+  transition: transform 0.15s ease-out 0.5s, opacity 0.15s ease 0.5s;
+  -moz-transform: translate3d(115%, -20%, 0);
+  -ms-transform: translate3d(115%, -20%, 0);
+  -webkit-transform: translate3d(115%, -20%, 0);
+  transform: translate3d(115%, -20%, 0);
+  opacity: 0;
+}
+/* line 47, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node:after, .edit_node:before, #edit_global_area:after, #edit_global_area:before {
+  right: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+/* line 59, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node:after, #edit_global_area:after {
+  border-right-color: #fff;
+  border-width: 15px;
+  margin-top: -15px;
+}
+/* line 66, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node:before, #edit_global_area:before {
+  border-right-color: #49FF98;
+  border-width: 18px;
+  margin-top: -18px;
+}
+/* line 73, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node ul, .edit_node li, #edit_global_area ul, #edit_global_area li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 78, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node .tg-list, #edit_global_area .tg-list {
+  height: auto;
+  line-height: 1.2;
+  font-style: 0.75rem;
+  text-align: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+}
+/* line 88, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node .tg-list-item, #edit_global_area .tg-list-item {
+  margin: 0;
+  padding-bottom: 10px;
+  height: auto;
+}
+/* line 93, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node .tg-list-item:last-child, #edit_global_area .tg-list-item:last-child {
+  padding-bottom: 0;
+}
+/* line 97, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node .tg-list-item > *, #edit_global_area .tg-list-item > * {
+  vertical-align: middle;
+}
+/* line 100, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node .tg-list-item > span, #edit_global_area .tg-list-item > span {
+  height: 32px;
+  line-height: 32px;
+  display: inline-block;
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: solid 1px #f2f2f2;
+  color: #4F534E;
+  width: 80px;
+  font-style: italic;
+}
+/* line 113, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node .lg-list-item, #edit_global_area .lg-list-item {
+  height: 0px;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0;
+}
+/* line 120, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node .tgl, #edit_global_area .tgl {
+  display: none;
+}
+/* line 123, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node .tgl, .edit_node .tgl:after, .edit_node .tgl:before, .edit_node .tgl *, .edit_node .tgl *:after, .edit_node .tgl *:before, .edit_node .tgl + .tgl-btn, #edit_global_area .tgl, #edit_global_area .tgl:after, #edit_global_area .tgl:before, #edit_global_area .tgl *, #edit_global_area .tgl *:after, #edit_global_area .tgl *:before, #edit_global_area .tgl + .tgl-btn {
+  box-sizing: border-box;
+}
+/* line 127, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node .tgl::selection, .edit_node .tgl:after::selection, .edit_node .tgl:before::selection, .edit_node .tgl *::selection, .edit_node .tgl *:after::selection, .edit_node .tgl *:before::selection, .edit_node .tgl + .tgl-btn::selection, #edit_global_area .tgl::selection, #edit_global_area .tgl:after::selection, #edit_global_area .tgl:before::selection, #edit_global_area .tgl *::selection, #edit_global_area .tgl *:after::selection, #edit_global_area .tgl *:before::selection, #edit_global_area .tgl + .tgl-btn::selection {
+  background: none;
+}
+/* line 131, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node .tgl + .tgl-btn, #edit_global_area .tgl + .tgl-btn {
+  outline: 0;
+  display: inline-block;
+  width: 4em;
+  height: 2em;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+/* line 139, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node .tgl + .tgl-btn:after, .edit_node .tgl + .tgl-btn:before, #edit_global_area .tgl + .tgl-btn:after, #edit_global_area .tgl + .tgl-btn:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+}
+/* line 146, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node .tgl + .tgl-btn:after, #edit_global_area .tgl + .tgl-btn:after {
+  left: 0;
+}
+/* line 149, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node .tgl + .tgl-btn:before, #edit_global_area .tgl + .tgl-btn:before {
+  display: none;
+}
+/* line 155, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node .tgl:checked + .tgl-btn:after, #edit_global_area .tgl:checked + .tgl-btn:after {
+  left: 50%;
+}
+/* line 163, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node .tgl-ios + .tgl-btn, #edit_global_area .tgl-ios + .tgl-btn {
+  background: #fbfbfb;
+  border-radius: 2em;
+  padding: 2px;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  border: 1px solid #e8eae9;
+}
+/* line 169, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node .tgl-ios + .tgl-btn:after, #edit_global_area .tgl-ios + .tgl-btn:after {
+  border-radius: 2em;
+  background: #fbfbfb;
+  -moz-transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+  -o-transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+  -webkit-transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+  transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0 rgba(0, 0, 0, 0.08);
+}
+/* line 175, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node .tgl-ios + .tgl-btn:active, #edit_global_area .tgl-ios + .tgl-btn:active {
+  box-shadow: inset 0 0 0 2em #e8eae9;
+}
+/* line 177, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node .tgl-ios + .tgl-btn:active:after, #edit_global_area .tgl-ios + .tgl-btn:active:after {
+  padding-right: .8em;
+}
+/* line 183, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node .tgl-ios:checked + .tgl-btn, #edit_global_area .tgl-ios:checked + .tgl-btn {
+  background: #86d993;
+}
+/* line 185, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node .tgl-ios:checked + .tgl-btn:active, #edit_global_area .tgl-ios:checked + .tgl-btn:active {
+  box-shadow: none;
+}
+/* line 187, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.edit_node .tgl-ios:checked + .tgl-btn:active:after, #edit_global_area .tgl-ios:checked + .tgl-btn:active:after {
+  margin-left: -.8em;
+}
+
+/* line 196, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+#edit_global_area {
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  z-index: -1;
+  border: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  transform: none;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -moz-perspective: 1000px;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  -moz-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+/* line 207, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+#edit_global_area.active {
+  opacity: 1;
+  z-index: 9;
+}
+/* line 212, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+#edit_global_area .wrapper {
+  display: inline-block;
+  width: 66.66667%;
+  margin-left: 16.66667%;
+  background-color: #ffffff;
+  position: relative;
+  padding-bottom: 0.75em;
+  padding-right: 41.66667%;
+  height: auto;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+/* line 223, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+#edit_global_area .wrapper .title {
+  color: #898989;
+  text-decoration: underline;
+}
+/* line 228, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+#edit_global_area .wrapper .editor {
+  position: absolute;
+  width: 62.5%;
+  right: 0px;
+  top: 0;
+  padding: 20px 6.25%;
+  overflow-y: auto;
+  height: 100%;
+  text-align: left;
+  border-left: solid 2px #c3c3c3;
+  background-color: #F2F2F2;
+}
+/* line 240, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+#edit_global_area .wrapper .editor .translation_object {
+  position: absolute;
+  width: 80%;
+  opacity: 0;
+  visibility: hidden;
+}
+/* line 247, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+#edit_global_area .wrapper .editor .uploader {
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+/* line 255, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+#edit_global_area .wrapper .editor .actions {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  right: 0;
+  z-index: 9;
+}
+/* line 261, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+#edit_global_area .wrapper .editor .actions i {
+  padding: 0 10px;
+  cursor: pointer;
+}
+/* line 265, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+#edit_global_area .wrapper .editor .actions i:first-child {
+  border-right: solid 1px #c3c3c3;
+}
+/* line 273, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+#edit_global_area .tg-list-item {
+  height: 32px;
+  overflow: visible;
+  opacity: 1;
+  margin: 10px 0;
+  font-size: 0.7em;
+}
+
+/* line 288, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.editable[edit-type="home"] .translation_object {
+  position: absolute;
+  background-color: #fff;
+  bottom: 0;
+  top: initial;
+  left: 0;
+  padding: 25px;
+  opacity: 0;
+  visibility: hidden;
+  min-height: 100%;
+  width: 100%;
+}
+
+/* line 302, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.editable.left_editable .edit_node {
+  right: initial;
+  left: 0;
+  -moz-transform: translate3d(-115%, -20%, 0);
+  -ms-transform: translate3d(-115%, -20%, 0);
+  -webkit-transform: translate3d(-115%, -20%, 0);
+  transform: translate3d(-115%, -20%, 0);
+  border-left: none;
+  border-right: solid 2px #49FF98;
+}
+/* line 309, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.editable.left_editable .edit_node:after, .editable.left_editable .edit_node:before {
+  right: initial;
+  left: 100%;
+}
+/* line 315, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.editable.left_editable .edit_node:after {
+  border-right-color: transparent;
+  border-left-color: #fff;
+}
+/* line 319, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.editable.left_editable .edit_node:before {
+  border-right-color: transparent;
+  border-left-color: #49FF98;
+}
+/* line 326, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.editable.left_editable:hover .edit_node {
+  -moz-transform: translate3d(-105%, -20%, 0);
+  -ms-transform: translate3d(-105%, -20%, 0);
+  -webkit-transform: translate3d(-105%, -20%, 0);
+  transform: translate3d(-105%, -20%, 0);
+}
+/* line 331, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.editable.left_editable .translation_object {
+  top: 0;
+  bottom: initial;
+}
+
+/* line 338, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.editable:hover .menu_edit_node {
+  -moz-transform: translate3d(100%, 0%, 0);
+  -ms-transform: translate3d(100%, 0%, 0);
+  -webkit-transform: translate3d(100%, 0%, 0);
+  transform: translate3d(100%, 0%, 0);
+}
+
+/* line 343, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.menu_edit_node {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  right: initial;
+  left: 0%;
+  top: 0;
+  bottom: 33px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 0.75rem;
+  -moz-transform: translate3d(0%, -103%, 0);
+  -ms-transform: translate3d(0%, -103%, 0);
+  -webkit-transform: translate3d(0%, -103%, 0);
+  transform: translate3d(0%, -103%, 0);
+  -moz-transition: initial;
+  -o-transition: initial;
+  -webkit-transition: initial;
+  transition: initial;
+  padding: 5px 0;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  border: none;
+  background-color: transparent;
+}
+/* line 362, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.menu_edit_node:before, .menu_edit_node:after {
+  content: initial;
+}
+/* line 366, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.menu_edit_node .tg-list {
+  display: block;
+  width: 100%;
+  padding: 0 50px;
+}
+/* line 371, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.menu_edit_node .tg-list > li {
+  display: inline-block;
+  float: left;
+  width: 100%;
+  padding: 0;
+  cursor: pointer;
+  padding: 0;
+}
+/* line 380, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.menu_edit_node .tg-list > li:last-child span {
+  border: none;
+}
+/* line 385, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.menu_edit_node .tg-list > li > span {
+  border: none;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.3);
+  padding: 8px 0;
+  margin: 0;
+  height: 45px;
+  width: 25px;
+  cursor: pointer;
+}
+/* line 394, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.menu_edit_node .tg-list > li > span .fa {
+  font-size: 1.25rem;
+}
+
+/* line 403, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.mp-menu .menu_cat_enable_edit {
+  display: inline-block;
+  position: absolute;
+  font-size: 2em;
+  left: 1.8em;
+  border-left: solid 1px rgba(72, 67, 67, 0.4);
+  padding-left: 0.4em;
+  color: rgba(0, 0, 0, 0.4);
+  top: 18px;
+  cursor: pointer;
+}
+/* line 414, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.mp-menu .menu_cat_enable_edit .fa-plus {
+  margin: 0 20px;
+}
+/* line 418, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.mp-menu .menu_cat_enable_edit .fa.toggled {
+  text-shadow: 0px 0px 5px #FFF, 0px 0px 10px #FFF, 0px 0px 15px #FFF, 0px 0px 20px #B6FF00, 0px 0px 35px #B6FF00, 0px 0px 40px #B6FF00, 0px 0px 50px #B6FF00, 0px 0px 75px #B6FF00;
+}
+
+/* line 424, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.uploader {
+  text-align: center;
+}
+/* line 426, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.uploader .dropzone.dz-clickable {
+  cursor: pointer;
+}
+/* line 428, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.uploader .dropzone.dz-clickable .dz-message, .uploader .dropzone.dz-clickable .dz-message * {
+  cursor: pointer;
+}
+/* line 433, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.uploader .dropzone {
+  display: inline-block;
+  border: 2px dashed #0087F7;
+  border-radius: 5px;
+  background: #FFF none repeat scroll 0% 0%;
+  padding: 10px 20px;
+  margin: 0 10%;
+  height: 80%;
+  width: auto;
+}
+/* line 442, ../../../media/work/restaurant_application/sass/sass/_edit.scss */
+.uploader .dropzone .dz-message {
+  text-align: center;
+  margin: 2em 0px;
+}
+
+/*
+##     ##   #######   ##     ##  ########
+###   ###  ##     ##  ##     ##  ##
+#### ####  ##     ##  ##     ##  ##
+## ### ##  ##     ##  ##     ##  ######
+##     ##  ##     ##   ##   ##   ##
+##     ##  ##     ##    ## ##    ##
+##     ##   #######      ###     ########
+ */
+/* line 12, ../../../media/work/restaurant_application/sass/sass/_move.scss */
+.movable {
+  position: relative;
+}
+/* line 15, ../../../media/work/restaurant_application/sass/sass/_move.scss */
+.movable .movable_layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: move;
+  z-index: 999;
+}
+/* line 25, ../../../media/work/restaurant_application/sass/sass/_move.scss */
+.movable .fa.fa-arrows-alt {
+  color: red;
+  font-size: 2rem !important;
+  margin-left: -0.1rem;
+}
+
+/* line 32, ../../../media/work/restaurant_application/sass/sass/_move.scss */
+.cat_bg.highlight {
+  border: dashed 1px red;
+}
+
+/* line 2, ../../../media/work/restaurant_application/sass/sass/_delete.scss */
+.for_delete,
+.temp_delete {
+  display: none;
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 /*# sourceMappingURL=style.css.map */
