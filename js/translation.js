@@ -2,7 +2,8 @@
 // Translate Function
 ;( function( window ) {
 
-	var for_translation_els 	= query(".custom_trans", document);
+	var for_translation_els 	= query(".custom_trans", document),
+		for_translation_img		= query(".custom_trans_img", document);
 
 	function translation(lang) {
 		this.lang = lang;
@@ -25,6 +26,7 @@
 			this._homeContent();
 			this._catContent();
 			this._customTranslation();
+			this._imageTranslation();
 		},
 		_headerTranslation: function() {
 			for(var key in languages) {
@@ -39,6 +41,7 @@
 			}
 		},
 		_catContent: function() {
+			var _ = this;
 			var els_elaia 	= query('.menu_cat', document.getElementById('mp-menu')),
 				els_pepe 	= query('.menu_cat', document.getElementById('mp-menu2'));
 
@@ -62,6 +65,11 @@
 		_customTranslation: function() {
 			for(var key in for_translation_els) {
 				for_translation_els[key].innerHTML = for_translation_els[key].getAttribute("lang-" + this.lang);
+			}
+		},
+		_imageTranslation: function() {
+			for(var key in for_translation_img) {
+				for_translation_img[key].setAttribute("src", for_translation_img[key].getAttribute("lang-" + this.lang));
 			}
 		}
 

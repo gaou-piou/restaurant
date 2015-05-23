@@ -5,50 +5,52 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Restaurant Application</title>
-		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
-		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
-		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-		<link rel="manifest" href="/manifest.json">
-		<meta name="msapplication-TileColor" content="#da532c">
-		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		
+		<!--	FAVICON -->
+		<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+		<link rel="manifest" href="manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
+		
 		<link rel="stylesheet" type="text/css" href="css/icons.css" />
+		<link rel="stylesheet" type="text/css" href="css/ideal-image-slider.css" />
+
+
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="author" href="CODEARMADA Limited">
 		<script src="js/elaea_pepe.json"></script>
 	</head>
 
 	<body class="home" app_language="gr">
-<!--
-		<div id="edit_global_area" class="full_absolute">
-			<div class="wrapper"><h1 class="title">edit in</h1><div class="editor"><div class="actions"><i class="fa fa-check"></i><i class="fa fa-times"></i></div></div></div>
-		</div>
- -->
+
+
 		<div id="page" class="mp-pusher">
-			<nav id="mp-menu" class="mp-menu elaia">
+			<nav id="mp-menu" class="mp-menu elaia" data-shop="0">
 				<div class="mp-level">
-					<h2 class="fa fa-cutlery"><i style="font-size:2em;" class="fa fa-cutlery"></i></h2>
-					<div class="menu_cat_enable_edit"><i class="fa fa-wrench" onclick="javascript:menu_cat_edit(this);new move(this, 0)"></i><i class="fa fa-plus"></i><i class="fa fa-floppy-o" onclick="javascript: save_element(this);"></i></div>
+					<h2 class="flaticon1-restaurant13"><i style="font-size:3.5em;margin-left:-0.3em;" class="flaticon1-restaurant13"></i></h2>
 					<ul class="first_ul">
 
 					</ul>
 
 				</div>
 			</nav>
-			<nav id="mp-menu2" class="mp-menu pepe">
+			<nav id="mp-menu2" class="mp-menu pepe" data-shop="1">
 				<div class="mp-level">
 					<h2 class="fa fa-cutlery"><i style="font-size:2em;" class="fa fa-cutlery"></i></h2>
-					<div class="menu_cat_enable_edit"><i class="fa fa-wrench" onclick="javascript:menu_cat_edit(this);new move(this, 0)"></i><i class="fa fa-plus"></i><i class="fa fa-floppy-o" onclick="javascript: save_element(this);"></i></div>
+					<div class="menu_cat_enable_edit"><i class="flaticon2-spanner3" onclick="javascript:menu_cat_edit(this);new move(this, 0, 1)"></i><i class="flaticon3-plus79 plus" onclick="new attach(1, 1)"></i><i class="elem_save flaticon2-floppy9" onclick="javascript: save_element(this);"></i></div>
 					<ul class="first_ul">
 
 					</ul>
@@ -70,40 +72,79 @@
 							<span class="ch" onclick="javascript: new translation('ch');"><!-- 中国 --></span>
 						</div>
 					</div>
-					<div class="head_lines line_2"></div>
+					<div class="head_lines line_2">Restaurant Elaea & Grill Pepe at Parikia beach</div>
 				</header>
-				<div class="start_brand_area elaia">
+				<div class="start_brand_area elaia" data-shop="0">
 					<div class="layer full_absolute"></div>
 					<div class="brand_content editable left_editable" edit-type="home">
 					</div>
 					<div class="brand_title">
 						<span class="custom_trans" lang-en="restaurant" lang-gr="εστιατόριο" lang-de="restaurant" lang-fr="restaurant" lang-it="ristorante" lang-sp="restaurante" lang-ru="ресторан" lang-ch="餐厅">εστιατόριο</span>
-						<h1>ΕΛΑΙΑ</h1>
+						<h1 class="custom_trans" lang-en="alaea" lang-gr="ελαία" lang-de="alaea" lang-fr="alaea" lang-it="alaea" lang-sp="alaea" lang-ru="alaea" lang-ch="alaea">ελαία</h1>
+						<img class="custom_trans_img" id="elaia_logo" src="images/elaia.svg" alt="elaia" lang-en="images/elaia_en.svg" lang-gr="images/elaia.svg" lang-de="images/elaia_en.svg" lang-fr="images/elaia_en.svg" lang-it="images/elaia_en.svg" lang-sp="images/elaia_sp.svg" lang-ru="images/elaia_en.svg" lang-ch="images/elaia_en.svg">
 					</div>
 				</div>
-				<div class="start_brand_area pepe">
+				<div class="start_brand_area pepe" data-shop="1">
 					<div class="layer full_absolute"></div>
 					<div class="brand_content editable" edit-type="home">
 					</div>
 					<div class="brand_title">
 						<span class="custom_trans" lang-en="grill" lang-gr="ψητοπωλείο" lang-de="grill" lang-fr="gril" lang-it="griglia" lang-sp="parrilla" lang-ru="гриль" lang-ch="烤架">ψητοπωλείο</span>
-						<h1>ΠΕΠΕ</h1>
+						<h1 class="custom_trans" lang-en="Pepe’s Souvlaki" lang-gr="το σουβλάκι του Πεπέ" lang-de="Pepe’s Souvlaki" lang-fr="Le souvlaki de Pepe" lang-it="Lo suvlaki di Pepe" lang-sp="To suvlaqui tu Pepe" lang-ru="Сувлаки то Пепе" lang-ch="烤肉店">το σουβλάκι του Πεπέ</h1>
+						<img id="pepe_logo" src="images/pepe_logo.svg" alt="pepe">
 					</div>
 				</div>
 			</div>
 
+			<div id="dish_area">
+				<header>
+					<div class="menu_button">
+						<i class="flaticon1-nine6"></i>
+					</div>
+					<div class="titles">
+						<h2 class="main_title"></h2>
+						<h5 class="secondray_title"></h5>
+					</div>
+					<div class="home_button">
+						<i class="flaticon1-outline11"></i>
+					</div>
+				</header>
+				<div class="inner_page">
+					<div class="slider">
+						<ul id="slider">
+							<li></li>
+						</ul>
+						<div class="caption">
+							<div class="caption_wrapper">
+							</div>
+						</div>
+					</div>
+				</div>
+				<footer>
+					<span class="price flaticon2-tag28"></span>
+				</footer>
+			</div>
+
 		</div>
+
 
 		<script src="js/TweenMax.min.js"></script>
 		<script src="js/classie.js"></script>
+		<script src="js/howler.min.js"></script>
+
 
 		<script src="js/mlpushmenu.js"></script>
+		<script src="js/ideal-image-slider.min.js"></script>
+		<script src="js/iis-bullet-nav.js"></script>
+
 
 		<script src="js/general_functions.js"></script>
 
 		<script src="js/struction.js"></script>
 
 		<script src="js/translation.js"></script>
+
+		<script src="js/open_dish.js"></script>
 
 		<script src="js/main.js"></script>
 		<script src="js/home.js"></script>

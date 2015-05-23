@@ -105,7 +105,9 @@
 		},
 		_initEvents : function() {
 			var self = this;
-
+			
+			self._loadSounds();
+			
 			// the menu should close if clicking somewhere on the body
 			var bodyClickFn = function( el ) {
 				self._resetMenu();
@@ -173,9 +175,28 @@
 				} );
 			} );
 		},
+		_isCanPlayMP3: function isCanPlayMP3() {
+		    var userAgent = navigator.userAgent;
+		    return !(userAgent.indexOf('Opera') && userAgent.indexOf('firefox') > -1);
+		},
+		_loadSounds: function() {
+			var self = this;
+			
+			this.ext = self._isCanPlayMP3() ? 'mp3' : 'wav';
+			
+			this.openSound = new Howl({ urls: ['sounds/open-bubble-2.' + this.ext] });
+		    this.openSound2 = new Howl({ urls: ['sounds/open-bubble-3.' + this.ext], rate: 0.45 });
+		    this.bounceSound = new Howl({ urls: ['sounds/bounce.' + this.ext] });
+		    this.closeSound = new Howl({ urls: ['sounds/bubble-single-1.' + this.ext], rate: 0.5 });
+		    this.closeSound2 = new Howl({ urls: ['sounds/bubble-single-1.' + this.ext], rate: 0.75 });
+		    this.closeSound3 = new Howl({ urls: ['sounds/bubble-single-1.' + this.ext], rate: 0.85 });
+		    this.closeScaleSound = new Howl({ urls: ['sounds/open-bubble-3.' + this.ext], rate: 0.25 });
+		    this.closeBtnSound = new Howl({ urls: ['sounds/open-bubble-3.' + this.ext], rate: 1 });
+		},
 		_openMenu : function( subLevel ) {
 			// increment level depth
 			++this.level;
+			this.openSound2.play();
 
 			// move the main wrapper
 			var levelFactor = ( this.level - 1 ) * this.options.levelSpacing,
@@ -205,6 +226,7 @@
 		},
 		// close the menu
 		_resetMenu : function() {
+			this.closeSound3.play();
 			this._setTransform('translate3d(0,0,0)');
 			this.level = 0;
 			// remove class mp-pushed from main wrapper
@@ -215,6 +237,7 @@
 		},
 		// close sub menus
 		_closeMenu : function() {
+			this.closeSound.play();
 			var translateVal = this.options.type === 'overlap' ? this.el.offsetWidth + ( this.level - 1 ) * this.options.levelSpacing : this.el.offsetWidth;
 			this._setTransform( 'translate3d(' + translateVal + 'px,0,0)' );
 			this._toggleLevels();

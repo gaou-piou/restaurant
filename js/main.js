@@ -14,6 +14,8 @@ var doc 			= document,
 	// data_retrieved 	= 2,
 	// data_process 	= 0,
 	lang_array 		= [];
+// var languages, shops;
+// var content_json, shop_json, category_json, dish_json;
 
 /*
 ########   ##     ##  ##    ##    ######    ########   ####   #######   ##    ##    ######
@@ -45,3 +47,17 @@ function data_load_check() {
 	new translation( app_lang );
 }
 
+
+
+
+
+
+/*
+########   ########      ###     ########   ##    ##
+##     ##  ##           ## ##    ##     ##   ##  ##
+##     ##  ##          ##   ##   ##     ##    ####
+########   ######     ##     ##  ##     ##     ##
+##   ##    ##         #########  ##     ##     ##
+##    ##   ##         ##     ##  ##     ##     ##
+##     ##  ########   ##     ##  ########      ##
+*/

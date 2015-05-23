@@ -68,8 +68,6 @@ doc.addEventListener("DOMContentLoaded", function() {
 	var editable_els		= query('.editable', body);
 	var menu_levels 		= query('.mp-level', body);
 
-
-
 	TweenMax.set(doc.getElementById('page'), {perspective:800, transformStyle: "preserve-3d"});
 	TweenMax.set(home_select_els[0], {transformOrigin: "left center"});
 	TweenMax.set(home_select_els[1], {transformOrigin: "right center"});
