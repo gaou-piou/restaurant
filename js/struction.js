@@ -54,35 +54,7 @@
 					img_url = "images/categories/level_1/default.png";
 
 
-/*
-				this.fileTypes.forEach(function loop(element, index){
-					if(loop.stop){ return; }
-
-					if (imageExists("images/categories/level_1/" + cat_id + element)) {
-						img_url = "images/categories/level_1/" + cat_id + element;
-						loop.stop = true;
-					} else
-						img_url = "images/categories/level_1/default.png";
-				});
-*/
-
-
-
-				// if (imageExists("images/categories/level_1/" + cat_id + ".png")) {
-				// 	img_url = "images/categories/level_1/" + cat_id + ".png";
-				// } else if (imageExists("images/categories/level_1/" + cat_id + ".jpg")) {
-				// 	img_url = "images/categories/level_1/" + cat_id + ".jpg";
-				// } else if (imageExists("images/categories/level_1/" + cat_id + ".JPG")) {
-				// 	mg_url = "images/categories/level_1/" + cat_id + ".JPG";
-				// } else if (imageExists("images/categories/level_1/" + cat_id + ".jpeg")) {
-				// 	img_url = "images/categories/level_1/" + cat_id + ".jpeg";
-				// } else if (imageExists("images/categories/level_1/" + cat_id + ".JPEG")) {
-				// 	img_url = "images/categories/level_1/" + cat_id + ".JPEG";
-				// } else {
-				// 	img_url = "images/categories/level_1/default.png";
-				// };
-
-				cat.innerHTML = '<img class="menu_cat_image" src="' + img_url + '" /><a class="menu_cat editable" href="#" edit-type="menu_cat"></a><div class="mp-level"><h2 class="icon icon-display"></h2><a class="mp-back" href="#">back</a><div class="menu_cat_enable_edit"><i class="flaticon2-spanner3" onclick="javascript:menu_cat_edit(this);new move(this, 0)"></i><i class="flaticon3-plus79 plus" onclick="new attach(' + this.shop + ', 2,this)"></i><i class="elem_save flaticon2-floppy9" onclick="javascript: save_element(this);"></i></div><ul>' + this.dishes_html + '</ul></div>';
+				cat.innerHTML = '<img class="menu_cat_image" src="' + img_url + '" /><a class="menu_cat editable" href="#" edit-type="menu_cat"></a><div class="mp-level"><h2 class="icon icon-display"></h2><a class="mp-back" href="#">back</a><ul>' + this.dishes_html + '</ul></div>';
 
 				wrapper.appendChild(cat);
 			};
@@ -91,31 +63,6 @@
 			for (var i = 0; i < this.dishes_no; i++) {
 				var img_url = "",
 					cat_id 	= shops[ this.shop ].categories[ shop ].dishes[i].id;
-
-
-				// if (imageExists("images/categories/level_2/" + cat_id + ".png")) {
-				// 	img_url = "images/categories/level_2/" + cat_id + ".png";
-				// } else if (imageExists("images/categories/level_2/" + cat_id + ".jpg")) {
-				// 	img_url = "images/categories/level_2/" + cat_id + ".jpg";
-				// } else if (imageExists("images/categories/level_2/" + cat_id + ".JPG")) {
-				// 	mg_url = "images/categories/level_2/" + cat_id + ".JPG";
-				// } else if (imageExists("images/categories/level_2/" + cat_id + ".jpeg")) {
-				// 	img_url = "images/categories/level_2/" + cat_id + ".jpeg";
-				// } else if (imageExists("images/categories/level_2/" + cat_id + ".JPEG")) {
-				// 	img_url = "images/categories/level_2/" + cat_id + ".JPEG";
-				// } else {
-				// 	img_url = "images/categories/level_2/default.png";
-				// };
-
-				// this.fileTypes.forEach(function loop(element, index){
-				// 	if(loop.stop){ return; }
-
-				// 	if (imageExists("images/categories/level_2/" + cat_id + element)) {
-				// 		img_url = "images/categories/level_2/" + cat_id + element;
-				// 		loop.stop = true;
-				// 	} else
-				// 		img_url = "images/categories/level_2/default.png";
-				// });
 
 
 				var xmlDoc=loadXMLDoc("images/categories/level_2/" + cat_id + ".xml");

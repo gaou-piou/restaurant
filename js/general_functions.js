@@ -61,7 +61,7 @@ function menu_cat_edit(that) {
 		});
 		classie.add(that, "toggled");
 		classie.add(that.parentNode.parentNode, "editable");
-		
+
 		TweenMax.staggerFromTo(edit_nodes, 0.45, {
 			opacity: 0,
 			scale: 0.3,
@@ -161,4 +161,19 @@ function fireEvent(node, eventName) {
         node.fireEvent("on" + eventName, event);
     }
 };
+
+function loadXMLDoc(filename)
+{
+if (window.XMLHttpRequest)
+  {
+  xhttp=new XMLHttpRequest();
+  }
+else // code for IE5 and IE6
+  {
+  xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xhttp.open("GET",filename,false);
+xhttp.send();
+return xhttp.responseXML;
+}
 
