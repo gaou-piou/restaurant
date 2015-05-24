@@ -45,6 +45,16 @@
 
 				this._createSubCat(i);
 
+				var xmlDoc=loadXMLDoc("images/categories/level_1/" + cat_id + ".xml");
+
+				if(xmlDoc) {
+					var ext = xmlDoc.getElementsByTagName("ext");
+					img_url = "images/categories/level_1/" + cat_id + "." + ext[0].innerHTML;
+				} else
+					img_url = "images/categories/level_1/default.png";
+
+
+/*
 				this.fileTypes.forEach(function loop(element, index){
 					if(loop.stop){ return; }
 
@@ -54,6 +64,7 @@
 					} else
 						img_url = "images/categories/level_1/default.png";
 				});
+*/
 
 
 
@@ -71,7 +82,7 @@
 				// 	img_url = "images/categories/level_1/default.png";
 				// };
 
-				cat.innerHTML = '<img class="menu_cat_image" src="' + img_url + '" /><a class="menu_cat editable" href="#" edit-type="menu_cat"></a><div class="mp-level"><h2 class="icon icon-display"></h2><a class="mp-back" href="#">back</a><ul>' + this.dishes_html + '</ul></div>';
+				cat.innerHTML = '<img class="menu_cat_image" src="' + img_url + '" /><a class="menu_cat editable" href="#" edit-type="menu_cat"></a><div class="mp-level"><h2 class="icon icon-display"></h2><a class="mp-back" href="#">back</a><div class="menu_cat_enable_edit"><i class="flaticon2-spanner3" onclick="javascript:menu_cat_edit(this);new move(this, 0)"></i><i class="flaticon3-plus79 plus" onclick="new attach(' + this.shop + ', 2,this)"></i><i class="elem_save flaticon2-floppy9" onclick="javascript: save_element(this);"></i></div><ul>' + this.dishes_html + '</ul></div>';
 
 				wrapper.appendChild(cat);
 			};
@@ -96,15 +107,25 @@
 				// 	img_url = "images/categories/level_2/default.png";
 				// };
 
-				this.fileTypes.forEach(function loop(element, index){
-					if(loop.stop){ return; }
+				// this.fileTypes.forEach(function loop(element, index){
+				// 	if(loop.stop){ return; }
 
-					if (imageExists("images/categories/level_2/" + cat_id + element)) {
-						img_url = "images/categories/level_2/" + cat_id + element;
-						loop.stop = true;
-					} else
-						img_url = "images/categories/level_2/default.png";
-				});
+				// 	if (imageExists("images/categories/level_2/" + cat_id + element)) {
+				// 		img_url = "images/categories/level_2/" + cat_id + element;
+				// 		loop.stop = true;
+				// 	} else
+				// 		img_url = "images/categories/level_2/default.png";
+				// });
+
+
+				var xmlDoc=loadXMLDoc("images/categories/level_2/" + cat_id + ".xml");
+
+				if(xmlDoc) {
+					var ext = xmlDoc.getElementsByTagName("ext");
+					img_url = "images/categories/level_2/" + cat_id + "." + ext[0].innerHTML;
+				} else
+					img_url = "images/categories/level_2/default.png";
+
 
 				this.dishes_html = this.dishes_html.concat('<li class="sub_cat_bg" data-id="' + cat_id + '" data-cat="' + shop + '" data-index="' + i + '" data-shop="' + this.shop + '"><div class="click_layer" onclick="javascript: new open_dish(event, this);"></div><img class="menu_cat_image" src="' + img_url + '" /><a class="dishes editable" edit-type="sub_menu_cat" href="#">' + shops[ this.shop ].categories[ shop ].dishes[i].titles[ 'gr' ].text + '</a></li>');
 			};

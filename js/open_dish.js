@@ -60,7 +60,7 @@
 		_createInfo: function() {
 			var self = this;
 			this.dish.querySelector('header').innerHTML = 	'<div class="menu_button">'
-																+ '<i class="flaticon1-nine6"></i>'
+																+ '<i class="flaticon1-two114"></i>'
 															+ '</div>'
 															+ '<div class="titles">'
 																+ '<h2 class="main_title">' + this.title + '</h2>'
