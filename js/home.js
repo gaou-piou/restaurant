@@ -46,6 +46,7 @@ function add_editability(el) {
 		} else {
 			element.style.opacity = 0;
 			element.style.visibility = "hidden";
+			new Pen(element).destroy();
 		}
 	});
 
@@ -67,6 +68,8 @@ doc.addEventListener("DOMContentLoaded", function() {
 	var home_select_els 	= query('.start_brand_area', doc);
 	var editable_els		= query('.editable', body);
 	var menu_levels 		= query('.mp-level', body);
+
+
 
 	TweenMax.set(doc.getElementById('page'), {perspective:800, transformStyle: "preserve-3d"});
 	TweenMax.set(home_select_els[0], {transformOrigin: "left center"});

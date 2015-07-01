@@ -19,7 +19,7 @@
 		},
 		_initEvents: function() {
 			body.setAttribute('app_language', this.lang);
-			classie.remove(home_header.querySelector('.language .active'), "active");
+			classie.remove(home_header.querySelector('.line_2 .active'), "active");
 			classie.add(home_header.querySelector("." + this.lang), "active");
 
 			// this._headerTranslation();

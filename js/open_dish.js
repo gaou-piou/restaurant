@@ -4,6 +4,9 @@
 
 
 ;( function( window ) {
+
+
+
 	function open_dish(e, that) {
 		this.el = that.parentNode;
 		this.page = document.getElementById('page_wrapper');
@@ -30,7 +33,6 @@
 		_initEvents : function() {
 			var self = this;
 
-			self._loadSounds();
 			self._rememberPosition();
 			self._getContent();
 			self._createInfo();
@@ -39,28 +41,14 @@
 
 			// alert(this.el.innerHTML);
 		},
-		_isCanPlayMP3: function isCanPlayMP3() {
-		    var userAgent = navigator.userAgent;
-		    return !(userAgent.indexOf('Opera') && userAgent.indexOf('firefox') > -1);
-		},
-		_loadSounds: function() {
-			var self = this;
-			
-			this.ext = self._isCanPlayMP3() ? 'mp3' : 'wav';
-			
-			this.openSound = new Howl({ urls: ['sounds/open-bubble-2.' + this.ext] });
-		    this.openSound2 = new Howl({ urls: ['sounds/open-bubble-3.' + this.ext], rate: 0.15 });
-		    this.bounceSound = new Howl({ urls: ['sounds/bounce.' + this.ext] });
-		    this.closeSound = new Howl({ urls: ['sounds/bubble-single-1.' + this.ext], rate: 0.5 });
-		    this.closeSound2 = new Howl({ urls: ['sounds/bubble-single-1.' + this.ext], rate: 0.75 });
-		    this.closeSound3 = new Howl({ urls: ['sounds/bubble-single-1.' + this.ext], rate: 0.85 });
-		    this.closeScaleSound = new Howl({ urls: ['sounds/open-bubble-3.' + this.ext], rate: 0.25 });
-// 		    this.closeBtnSound = new Howl({ urls: ['sounds/open-bubble-3.mp3'], rate: 1 });
-		},
 		_createInfo: function() {
 			var self = this;
+			var slider = document.getElementById('slider');
+			var slides = document.getElementById('slides');
+
+
 			this.dish.querySelector('header').innerHTML = 	'<div class="menu_button">'
-																+ '<i class="flaticon1-two114"></i>'
+																+ '<i class="flaticon2-menu19"></i>'
 															+ '</div>'
 															+ '<div class="titles">'
 																+ '<h2 class="main_title">' + this.title + '</h2>'
@@ -69,25 +57,53 @@
 															+ '<div class="home_button">'
 																+ '<i class="flaticon1-outline11"></i>'
 															+ '</div>';
-			var string = "";
+			// var $string = "";
+			var sliderSetupString 	= "",
+				slidesString 		= "",
+				controlsString 		= "",
+				activeString 		= "";
 
-			for (var i = 1; i <= 3; i++) {
-				this.fileTypes.forEach(function loop(element, index){
-					if(loop.stop){ return; }
+			var xmlDoc = loadXMLDoc("images/dishes/" + self.id + ".xml");
 
-					if ( imageExists("images/dishes/" + self.id + "_" + i + element) ) {
-						img_url = "images/dishes/" + self.id + "_" + i + element;
-						string = string.concat('<img src="' + img_url + '" />');
-						loop.stop = true;
-					}
-				});
-			};
 
-			if ( string == "" ) {
-				string = '<img src="images/dishes/default.jpg" /> <img src="images/dishes/default.jpg" />';
-			};
 
-			this.dish.querySelector('.slider > ul').innerHTML = string;
+			if(xmlDoc) {
+				for (var i = 1; i <= 3; i++) {
+					var ext = xmlDoc.getElementsByTagName("ext" + i);
+					if (ext.length > 0) {
+						img_url = "images/dishes/" + self.id + "_" + i + "." + ext[0].innerHTML;
+
+						if (i == 1)
+							sliderSetupString = sliderSetupString.concat('<input checked class="sliderSetup" type=radio name=slider id=slide'+i+' />');
+						else
+							sliderSetupString = sliderSetupString.concat('<input class="sliderSetup" type=radio name=slider id=slide'+i+' />');
+
+						slidesString = slidesString.concat('<article style="background-image:url(' + img_url + ')"></article>');
+						activeString = controlsString = controlsString.concat('<label for=slide'+i+'></label>');
+					};
+				};
+			}
+
+
+			var wrapper= document.createElement('div');
+			wrapper.innerHTML=sliderSetupString;
+			var wrapels = wrapper.childNodes;
+			var prevSetup = query('.sliderSetup', slider);
+
+			prevSetup.forEach(function (elem) {
+			    slider.removeChild(elem);
+			});
+
+			var wrapelsNUM = wrapels.length;
+
+			for (var i = 0; i < wrapelsNUM; i++) {
+				slider.insertBefore(wrapels[0], slides);
+			}
+
+			slider.querySelector('.inner').innerHTML = slidesString;
+			document.getElementById('controls').innerHTML = controlsString;
+			document.getElementById('active').innerHTML = activeString;
+
 
 			this.dish.querySelector('.caption_wrapper').innerHTML = this.description;
 			this.dish.querySelector('.price').innerHTML = this.price;
@@ -142,17 +158,6 @@
 		},
 		_appearDish: function() {
 			var self = this;
-			
-			self.openSound.play();
-
-			var slider = new IdealImageSlider.Slider({
-				selector: '#slider',
-				interval: 6000,
-				transitionDuration: 2200,
-				keyboardNav: false
-			});
-			slider.addBulletNav();
-			slider.start();
 
 			TweenMax.fromTo(self.dish, 1, {
 				x:"100%",
@@ -162,15 +167,16 @@
 				opacity: 1,
 				delay:0.2,
 				ease: Power2.easeInOut
+
 			});
 
 			document.getElementById('dish_area').querySelector('.menu_button > i').addEventListener("click", function() {
-				self.closeScaleSound.play();
+//				dish_sound_closeScaleSound.play();
 				self._disappearDish();
 			});
 
 			document.getElementById('dish_area').querySelector('.home_button > i').addEventListener("click", function() {
-				self.closeScaleSound.play();
+//				dish_sound_closeScaleSound.play();
 				self._returnHome();
 			});
 		},

@@ -5,7 +5,7 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Restaurant Application</title>
-		
+
 		<!--	FAVICON -->
 		<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
@@ -24,10 +24,13 @@
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
-		
+
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="css/icons.css" />
+		<link rel="stylesheet" type="text/css" href="css/dropzone.css" />
 		<link rel="stylesheet" type="text/css" href="css/ideal-image-slider.css" />
 
+		<link rel="stylesheet" href="css/pen.css">
 
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="author" href="CODEARMADA Limited">
@@ -36,11 +39,22 @@
 
 	<body class="home" app_language="gr">
 
+		<div id="edit_global_area" class="full_absolute">
+			<div class="wrapper">
+				<h1 class="title">edit in</h1>
+				<div class="editor">
+					<div class="actions"><i class="flaticon2-check25 check"></i><i class="flaticon2-wrong6 wrong"></i></div>
+				</div>
+			</div>
+		</div>
+
+
 
 		<div id="page" class="mp-pusher">
 			<nav id="mp-menu" class="mp-menu elaia" data-shop="0">
 				<div class="mp-level">
 					<h2 class="flaticon1-restaurant13"><i style="font-size:3.5em;margin-left:-0.3em;" class="flaticon1-restaurant13"></i></h2>
+					<div class="menu_cat_enable_edit"><i class="flaticon2-spanner3" onclick="javascript:menu_cat_edit(this);new move(this, 0, 1)"></i><i class="flaticon3-plus79 plus" onclick="new attach(0, 1)"></i><i class="elem_save flaticon2-floppy9" onclick="javascript: save_element(this);"></i></div>
 					<ul class="first_ul">
 
 					</ul>
@@ -62,17 +76,34 @@
 				<header id="home_header">
 					<div class="head_lines line_1">
 						<div class="language">
-							<span class="en" onclick="javascript: new translation('en');"><!-- English --></span>
-							<span class="gr active" onclick="javascript: new translation('gr');"><!-- Ελληνικά --></span>
-							<span class="de" onclick="javascript: new translation('de');"><!-- Deutsch --></span>
-							<span class="fr" onclick="javascript: new translation('fr');"><!-- Français --></span>
-							<span class="it" onclick="javascript: new translation('it');"><!-- Italiano --></span>
-							<span class="sp" onclick="javascript: new translation('sp');"><!-- Español --></span>
-							<span class="ru" onclick="javascript: new translation('ru');"><!-- Pусский --></span>
-							<span class="ch" onclick="javascript: new translation('ch');"><!-- 中国 --></span>
+							<div class="lang_wrapper">
+								<div id="lang_Layer">
+									<div class="dot"></div>
+								</div>
+								<span class="_en" onclick="javascript: new translation('en');"><!-- English --></span>
+								<span class="_gr" onclick="javascript: new translation('gr');"><!-- Ελληνικά --></span>
+								<span class="_de" onclick="javascript: new translation('de');"><!-- Deutsch --></span>
+								<span class="_fr" onclick="javascript: new translation('fr');"><!-- Français --></span>
+								<span class="_it" onclick="javascript: new translation('it');"><!-- Italiano --></span>
+								<span class="_sp" onclick="javascript: new translation('sp');"><!-- Español --></span>
+								<span class="_ru" onclick="javascript: new translation('ru');"><!-- Pусский --></span>
+								<span class="_ch" onclick="javascript: new translation('ch');"><!-- 中国 --></span>
+							</div>
+						</div>
+						<a href="RestaurantApplication-debug.apk"><i class="flaticon1-download47 download_app"></i></a>
+					</div>
+					<div class="head_lines line_2">
+						<div>
+							<i class="en" onclick="javascript: new translation('en');new language(0);">English</i>
+							<i class="gr active" onclick="javascript: new translation('gr');new language(1);">Ελληνικά</i>
+							<i class="de" onclick="javascript: new translation('de');new language(2);">Deutsch</i>
+							<i class="fr" onclick="javascript: new translation('fr');new language(3);">Français</i>
+							<i class="it" onclick="javascript: new translation('it');new language(4);">Italiano</i>
+							<i class="sp" onclick="javascript: new translation('sp');new language(5);">Español</i>
+							<i class="ru" onclick="javascript: new translation('ru');new language(6);">Pусский</i>
+							<i class="ch" onclick="javascript: new translation('ch');new language(7);">中国</i>
 						</div>
 					</div>
-					<div class="head_lines line_2">Restaurant Elaea & Grill Pepe at Parikia beach</div>
 				</header>
 				<div class="start_brand_area elaia" data-shop="0">
 					<div class="layer full_absolute"></div>
@@ -102,26 +133,52 @@
 						<i class="flaticon1-nine6"></i>
 					</div>
 					<div class="titles">
-						<h2 class="main_title"></h2>
-						<h5 class="secondray_title"></h5>
+						<h2 class="main_title">Μουσακάς</h2>
+						<h5 class="secondray_title">Μαγαζί: Ελαία / Μενού: Της ώρας</h5>
 					</div>
 					<div class="home_button">
 						<i class="flaticon1-outline11"></i>
 					</div>
 				</header>
 				<div class="inner_page">
-					<div class="slider">
-						<ul id="slider">
-							<li></li>
-						</ul>
+					<div id="slider">
+						<span class="forafter"></span>
+
+					    <!-- MaxWidth Options -->
+
+					    <!-- .respond -->
+					    <!-- Slider Setup -->
+
+
+					    <!-- The Slider -->
+					    <div id="slides">
+							<div id="overflow">
+								<div class="inner">
+
+								</div>
+							<!-- .inner -->
+							</div>
+					      <!-- #overflow -->
+					    </div>
+					    <!-- #slides -->
+					    <!-- Controls and Active Slide Display -->
+					    <div id="controls">
+					    </div>
+					    <!-- #controls -->
+					    <div id="active">
+					    </div>
+					    <!-- #active -->
+
 						<div class="caption">
 							<div class="caption_wrapper">
+								<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem a sequi quas dolor quidem sed incidunt ut quisquam reiciendis, atque odit explicabo, distinctio quo debitis in unde similique voluptatibus. Iusto!</div>
+								<div>Odio provident quidem suscipit delectus laborum consequuntur doloribus fugit nulla, nihil reprehenderit hic, asperiores sint maxime repellendus ea veritatis magni libero. Quisquam laudantium at id iusto voluptates eaque accusantium quo.</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<footer>
-					<span class="price flaticon2-tag28"></span>
+					<span class="price flaticon2-tag28">20</span>
 				</footer>
 			</div>
 
@@ -132,16 +189,13 @@
 		<script src="js/classie.js"></script>
 		<script src="js/howler.min.js"></script>
 
-
 		<script src="js/mlpushmenu.js"></script>
-		<script src="js/ideal-image-slider.min.js"></script>
-		<script src="js/iis-bullet-nav.js"></script>
-
 
 		<script src="js/general_functions.js"></script>
 
 		<script src="js/struction.js"></script>
 
+		<script src="js/language.js"></script>
 		<script src="js/translation.js"></script>
 
 		<script src="js/open_dish.js"></script>
